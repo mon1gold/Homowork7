@@ -1,21 +1,21 @@
-public class Cat extends Animals {
-    private static final int maxRunDistance = 200;
+public class Cat extends Animal {
+    private static int countCats = 0;
+    private int maxRunDistance = 200;
 
-    public Cat(String name, int age) {
-        super(name, age);
+    public Cat() {
+        countCats++;
+    }
+
+    public static int getCountCats() {
+        return countCats;
     }
 
     @Override
     public void run(int distance) {
-        if (distance < maxRunDistance) {
-            System.out.println(name + " пробіг " + distance + " м");
+        if (distance <= maxRunDistance) {
+            System.out.println("Кіт пробіг " + distance + " м");
         } else {
-            System.out.println(name + " не може пробігти таку дистанцію " + distance + " м");
+            System.out.println("Кіт не зміг пробігти " + distance + " м");
         }
-    }
-
-    @Override
-    public void swim(int distance) {
-        System.out.println(name + " не вміє плавати");
     }
 }

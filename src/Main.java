@@ -1,17 +1,19 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Animals cat = new Cat("Kasper", 7);
-        cat.run(100);
-        cat.swim(20);
-        cat.run(350);
-        Animals dog = new Dog("Bim", 12);
-        dog.run(450);
-        dog.swim(4);
-        dog.run(600);
+        Animal animal = new Animal();
+        Dog dog = new Dog();
+        Cat cat = new Cat();
 
+        animal.run(100);
+        animal.swim(5);
 
+        dog.run(400);
+        dog.swim(15);
 
+        cat.run(150);
+
+        System.out.println("Кітів створено: " + Cat.getCountCats());
+        System.out.println("Собак створено: " + Dog.getCountDogs());
+        System.out.println("Тварин створено:" + Animal.getCountAnimals());
     }
 }
